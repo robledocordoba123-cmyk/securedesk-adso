@@ -1,0 +1,2 @@
+### 3. Login ADMIN
+{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoiYWRtaW5Ac2VjdXJlZGVzay5sb2NhbCIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4OTk0MjMwOSwiZXhwIjoxNzg5OTQ5NTA5fQ.R-BdxZEzFuZrVvDf6WOt3MdHP94-8_YI-LZGYJHzviI","user":{"id":1,"email":"admin@securedesk.local","role":"ADMIN"}}

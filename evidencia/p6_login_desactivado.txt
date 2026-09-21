@@ -1,0 +1,18 @@
+
+
+### 15b. Usuario desactivado intenta login -> esperado 403
+HTTP/1.1 403 Forbidden
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+RateLimit-Policy: 5;w=60
+RateLimit-Limit: 5
+RateLimit-Remaining: 4
+RateLimit-Reset: 60
+Content-Type: application/json; charset=utf-8
+Content-Length: 58
+ETag: W/"3a-ICvgJb3KSlYm2/DLdPzPmrnto94"
+Date: Sun, 20 Sep 2026 22:13:03 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"error":"Usuario desactivado, contacte al administrador"}

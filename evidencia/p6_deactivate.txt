@@ -1,0 +1,12 @@
+### 14b. Re-desactivar usuario CONSULTA (id 3) para la prueba
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 61
+ETag: W/"3d-ZjxHRBGd337ykingeD9FSZIosl4"
+Date: Sun, 20 Sep 2026 22:13:03 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"id":3,"email":"consulta@securedesk.local","isActive":false}

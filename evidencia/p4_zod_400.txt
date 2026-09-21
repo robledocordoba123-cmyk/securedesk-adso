@@ -1,0 +1,12 @@
+### 7. Crear incidente con body INVALIDO (Zod) -> esperado 400
+HTTP/1.1 400 Bad Request
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 386
+ETag: W/"182-6qmrxZPtyZ4uR+HWgdmMkkLu1/o"
+Date: Sun, 20 Sep 2026 22:12:01 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"error":"Datos invalidos","detalles":[{"campo":"title","mensaje":"El titulo debe tener al menos 5 caracteres"},{"campo":"description","mensaje":"La descripcion debe tener al menos 10 caracteres"},{"campo":"severity","mensaje":"Invalid enum value. Expected 'BAJA' | 'MEDIA' | 'ALTA' | 'CRITICA', received 'URGENTE'"},{"campo":"reporterEmail","mensaje":"Correo del reportero invalido"}]}

@@ -1,0 +1,13 @@
+
+### 5. CONSULTA intenta entrar a /admin/ping -> esperado 403
+HTTP/1.1 403 Forbidden
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 105
+ETag: W/"69-fM5YZKLVzy7nEr9dGcOzYQfBZ8c"
+Date: Sun, 20 Sep 2026 22:11:50 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"error":"No tiene permisos para acceder a este recurso","rolRequerido":["ADMIN"],"rolActual":"CONSULTA"}

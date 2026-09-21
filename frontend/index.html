@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>SecureDesk ADSO</title>
+<style>
+  body { font-family: Segoe UI, Arial, sans-serif; background: #0f172a; color: #e2e8f0; margin: 0; padding: 40px; }
+  .card { background: #1e293b; max-width: 640px; margin: 0 auto; padding: 28px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,.4); }
+  h1 { color: #38bdf8; font-size: 22px; margin-top: 0; }
+  input, button { width: 100%; padding: 10px; margin: 6px 0; border-radius: 6px; border: 1px solid #334155; box-sizing: border-box; }
+  input { background: #0f172a; color: #e2e8f0; }
+  button { background: #38bdf8; color: #0f172a; font-weight: bold; border: none; cursor: pointer; }
+  button:hover { background: #0ea5e9; }
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 12px; font-weight: bold; }
+  .ADMIN { background: #f43f5e; color: white; }
+  .ANALISTA { background: #f59e0b; color: #1e293b; }
+  .CONSULTA { background: #22c55e; color: #1e293b; }
+  table { width: 100%; border-collapse: collapse; margin-top: 14px; }
+  th, td { text-align: left; padding: 8px; border-bottom: 1px solid #334155; font-size: 13px; }
+  #err { color: #f87171; font-size: 13px; }
+  .hidden { display: none; }
+  .section-title { margin-top: 24px; font-size: 14px; text-transform: uppercase; color: #94a3b8; letter-spacing: .05em; }
+  .sev-CRITICA { color: #f43f5e; font-weight: bold; }
+  .sev-ALTA { color: #f97316; font-weight: bold; }
+  .sev-MEDIA { color: #eab308; }
+  .sev-BAJA { color: #22c55e; }
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>SecureDesk ADSO &mdash; Panel de Incidentes</h1>
+
+  <div id="loginBox">
+    <p style="color:#94a3b8; font-size:13px;">Backend: <code>http://localhost:4001</code></p>
+    <input id="email" placeholder="correo@securedesk.local" value="admin@securedesk.local">
+    <input id="password" type="password" placeholder="contrasena" value="Sena2026!">
+    <button onclick="login()">Iniciar sesion</button>
+    <p id="err"></p>
+  </div>
+
+  <div id="appBox" class="hidden">
+    <p>Sesion activa: <b id="who"></b> &nbsp; <span id="roleBadge" class="badge"></span></p>
+    <button onclick="logout()" style="background:#334155; color:#e2e8f0;">Cerrar sesion</button>
+
+    <div class="section-title">Incidentes registrados</div>
+    <table>
+      <thead><tr><th>Titulo</th><th>Severidad</th><th>Correo del reportero</th></tr></thead>
+      <tbody id="incidentRows"></tbody>
+    </table>
+
+    <div id="adminPanel" class="hidden">
+      <div class="section-title">Panel administrativo (solo ADMIN)</div>
+      <table>
+        <thead><tr><th>Usuario</th><th>Rol</th><th>Estado</th><th>Accion</th></tr></thead>
+        <tbody id="userRows"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+const API = 'http://localhost:4001';
+let token = null, role = null, email = null;
+
+async function login() {
+  document.getElementById('err').textContent = '';
+  const em = document.getElementById('email').value;
+  const pw = document.getElementById('password').value;
+  try {
+    const r = await fetch(`${API}/auth/login`, { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({email: em, password: pw}) });
+    const data = await r.json();
+    if (!r.ok) { document.getElementById('err').textContent = data.error; return; }
+    token = data.token; role = data.user.role; email = data.user.email;
+    document.getElementById('loginBox').classList.add('hidden');
+    document.getElementById('appBox').classList.remove('hidden');
+    document.getElementById('who').textContent = email;
+    const badge = document.getElementById('roleBadge');
+    badge.textContent = role; badge.className = 'badge ' + role;
+    document.getElementById('adminPanel').classList.toggle('hidden', role !== 'ADMIN');
+    await loadIncidents();
+    if (role === 'ADMIN') await loadUsers();
+  } catch (e) {
+    document.getElementById('err').textContent = 'No se pudo conectar al backend (' + e.message + ')';
+  }
+}
+
+function logout() {
+  token = null; role = null; email = null;
+  document.getElementById('loginBox').classList.remove('hidden');
+  document.getElementById('appBox').classList.add('hidden');
+}
+
+async function loadIncidents() {
+  const r = await fetch(`${API}/incidents`, { headers: { Authorization: 'Bearer ' + token } });
+  const items = await r.json();
+  document.getElementById('incidentRows').innerHTML = items.map(i =>
+    `<tr><td>${i.title}</td><td class="sev-${i.severity}">${i.severity}</td><td>${i.reporterEmail}</td></tr>`
+  ).join('');
+}
+
+async function loadUsers() {
+  const r = await fetch(`${API}/users`, { headers: { Authorization: 'Bearer ' + token } });
+  const users = await r.json();
+  document.getElementById('userRows').innerHTML = users.map(u =>
+    `<tr><td>${u.email}</td><td>${u.role}</td><td>${u.isActive ? 'Activo' : 'Inactivo'}</td>
+     <td><button style="width:auto;padding:4px 10px;" onclick="toggleUser(${u.id}, ${u.isActive})">${u.isActive ? 'Desactivar' : 'Activar'}</button></td></tr>`
+  ).join('');
+}
+
+async function toggleUser(id, isActive) {
+  const action = isActive ? 'deactivate' : 'activate';
+  await fetch(`${API}/users/${id}/${action}`, { method: 'PATCH', headers: { Authorization: 'Bearer ' + token } });
+  await loadUsers();
+}
+</script>
+</body>
+</html>

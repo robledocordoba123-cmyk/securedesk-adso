@@ -1,0 +1,14 @@
+
+
+### 13. Listar usuarios como ADMIN
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 349
+ETag: W/"15d-Ek+XgkNjX/7JKR3WMo6F14fIhos"
+Date: Sun, 20 Sep 2026 22:12:23 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+[{"id":1,"email":"admin@securedesk.local","role":"ADMIN","isActive":true,"createdAt":"2026-09-20T22:10:29.896Z"},{"id":2,"email":"analista@securedesk.local","role":"ANALISTA","isActive":true,"createdAt":"2026-09-20T22:10:29.912Z"},{"id":3,"email":"consulta@securedesk.local","role":"CONSULTA","isActive":true,"createdAt":"2026-09-20T22:10:29.920Z"}]

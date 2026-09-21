@@ -1,0 +1,14 @@
+
+
+### 9. Listar incidentes como CONSULTA -> correo del reportero debe verse ENMASCARADO
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 844
+ETag: W/"34c-o7Zpdv0NtY97kkg58cvO7x6k/DA"
+Date: Sun, 20 Sep 2026 22:12:01 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+[{"id":3,"title":"Fuga de credenciales en repo","description":"Se encontro un .env con credenciales reales subido por error a un commit.","severity":"CRITICA","status":"ABIERTO","reporterEmail":"ma*************@securedesk.local","createdAt":"2026-09-20T22:12:01.758Z"},{"id":1,"title":"Intentos repetidos de login fallido","description":"Se detectaron 12 intentos fallidos de inicio de sesion contra la cuenta admin en 2 minutos.","severity":"ALTA","status":"ABIERTO","reporterEmail":"se*****************@securedesk.local","createdAt":"2026-09-20T22:10:29.928Z"},{"id":2,"title":"Variable de entorno expuesta en log","description":"Un log de desarrollo imprimio por error el valor de JWT_SECRET durante una prueba local.","severity":"CRITICA","status":"ABIERTO","reporterEmail":"de****@securedesk.local","createdAt":"2026-09-20T22:10:29.928Z"}]

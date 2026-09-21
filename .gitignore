@@ -1,0 +1,15 @@
+node_modules/
+*.log
+
+# Secretos reales - nunca subir
+backend/.env
+
+# Backups reales de la base de datos (pueden contener datos de prueba)
+backend/backups/*.sql
+
+# Archivos temporales de Word
+~$*.docx
+
+# Tokens JWT reales generados durante pruebas (no publicar bearer tokens, aunque hayan expirado)
+evidencia/admin_token.txt
+evidencia/consulta_token.txt

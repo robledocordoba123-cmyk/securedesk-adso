@@ -1,0 +1,14 @@
+
+
+### 10. Listar incidentes como ADMIN -> correo del reportero debe verse COMPLETO
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 844
+ETag: W/"34c-q24AyvcqQT/rVcpdtNnhswoaxzg"
+Date: Sun, 20 Sep 2026 22:12:02 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+[{"id":3,"title":"Fuga de credenciales en repo","description":"Se encontro un .env con credenciales reales subido por error a un commit.","severity":"CRITICA","status":"ABIERTO","reporterEmail":"maria.reportera@securedesk.local","createdAt":"2026-09-20T22:12:01.758Z"},{"id":1,"title":"Intentos repetidos de login fallido","description":"Se detectaron 12 intentos fallidos de inicio de sesion contra la cuenta admin en 2 minutos.","severity":"ALTA","status":"ABIERTO","reporterEmail":"seguridad.monitoreo@securedesk.local","createdAt":"2026-09-20T22:10:29.928Z"},{"id":2,"title":"Variable de entorno expuesta en log","description":"Un log de desarrollo imprimio por error el valor de JWT_SECRET durante una prueba local.","severity":"CRITICA","status":"ABIERTO","reporterEmail":"devops@securedesk.local","createdAt":"2026-09-20T22:10:29.928Z"}]

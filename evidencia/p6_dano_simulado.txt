@@ -1,0 +1,8 @@
+
+### Simulando incidente de perdida de datos: se borra toda la tabla Incident por error
+DELETE 3
+ count 
+-------
+     0
+(1 row)
+

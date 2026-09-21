@@ -1,0 +1,15 @@
+Verificando contenido real del backup (primeras lineas con datos de usuarios/incidentes):
+COPY public."Incident" (id, title, description, severity, status, "reporterEmail", "reportedById", "createdAt") FROM stdin;
+1	Intentos repetidos de login fallido	Se detectaron 12 intentos fallidos de inicio de sesion contra la cuenta admin en 2 minutos.	ALTA	ABIERTO	seguridad.monitoreo@securedesk.local	2	2026-09-20 22:10:29.928
+2	Variable de entorno expuesta en log	Un log de desarrollo imprimio por error el valor de JWT_SECRET durante una prueba local.	CRITICA	ABIERTO	devops@securedesk.local	1	2026-09-20 22:10:29.928
+3	Fuga de credenciales en repo	Se encontro un .env con credenciales reales subido por error a un commit.	CRITICA	ABIERTO	maria.reportera@securedesk.local	1	2026-09-20 22:12:01.758
+--
+COPY public."User" (id, email, password, role, "isActive", "createdAt") FROM stdin;
+1	admin@securedesk.local	$2a$10$TkdM.YO7TRtaDbDrGk0S9OV9zt1sZNOiGyKbuswUERtrZNZai3IAS	ADMIN	t	2026-09-20 22:10:29.896
+2	analista@securedesk.local	$2a$10$TkdM.YO7TRtaDbDrGk0S9OV9zt1sZNOiGyKbuswUERtrZNZai3IAS	ANALISTA	t	2026-09-20 22:10:29.912
+3	consulta@securedesk.local	$2a$10$TkdM.YO7TRtaDbDrGk0S9OV9zt1sZNOiGyKbuswUERtrZNZai3IAS	CONSULTA	t	2026-09-20 22:10:29.92
+--
+COPY public._prisma_migrations (id, checksum, finished_at, migration_name, logs, rolled_back_at, started_at, applied_steps_count) FROM stdin;
+3fb581d6-2ac7-4929-9575-1ebb03d81df0	0e56a9b3234cd5c9907ea55aa4e9457637d13fd0ebc0f0efc92e30c959e6ec2e	2026-09-20 22:10:22.525746+00	20260920221022_init	\N	\N	2026-09-20 22:10:22.499298+00	1
+\.
+

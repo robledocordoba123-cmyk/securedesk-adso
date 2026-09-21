@@ -1,0 +1,8 @@
+### Verificacion DESPUES de restaurar: deben volver a aparecer los 3 incidentes
+ id |                title                
+----+-------------------------------------
+  1 | Intentos repetidos de login fallido
+  2 | Variable de entorno expuesta en log
+  3 | Fuga de credenciales en repo
+(3 rows)
+

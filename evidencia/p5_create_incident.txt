@@ -1,0 +1,14 @@
+
+
+### 8. Crear incidente VALIDO como ADMIN -> esperado 201
+HTTP/1.1 201 Created
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 267
+ETag: W/"10b-Fh4wmhr2zNzZEZJTGWdgSqd0RbA"
+Date: Sun, 20 Sep 2026 22:12:01 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"id":3,"title":"Fuga de credenciales en repo","description":"Se encontro un .env con credenciales reales subido por error a un commit.","severity":"CRITICA","status":"ABIERTO","reporterEmail":"maria.reportera@securedesk.local","createdAt":"2026-09-20T22:12:01.758Z"}

@@ -1,0 +1,3 @@
+Generando backup de PostgreSQL (securedesk) -> scripts/../backups/securedesk_backup_20260920_171316.sql
+Backup generado: scripts/../backups/securedesk_backup_20260920_171316.sql
+-rw-r--r-- 1 Pc 197609 7.0K Sep 20 17:13 scripts/../backups/securedesk_backup_20260920_171316.sql

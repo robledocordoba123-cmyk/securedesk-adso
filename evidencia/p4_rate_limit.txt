@@ -1,0 +1,19 @@
+### 11. Rate limiting en /auth/login (6 intentos con password incorrecta)
+--- Intento 1 ---
+HTTP_STATUS:401
+{"error":"Credenciales invalidas"}
+--- Intento 2 ---
+HTTP_STATUS:401
+{"error":"Credenciales invalidas"}
+--- Intento 3 ---
+HTTP_STATUS:401
+{"error":"Credenciales invalidas"}
+--- Intento 4 ---
+HTTP_STATUS:429
+{"error":"Demasiados intentos de login, intente de nuevo en un minuto"}
+--- Intento 5 ---
+HTTP_STATUS:429
+{"error":"Demasiados intentos de login, intente de nuevo en un minuto"}
+--- Intento 6 ---
+HTTP_STATUS:429
+{"error":"Demasiados intentos de login, intente de nuevo en un minuto"}

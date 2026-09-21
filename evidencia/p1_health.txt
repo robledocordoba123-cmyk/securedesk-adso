@@ -1,0 +1,12 @@
+### 1. Health check (Practica 1)
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 90
+ETag: W/"5a-C4dNsXExp68iD7k+nHaykiKU30U"
+Date: Sun, 20 Sep 2026 22:11:39 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"status":"ok","service":"securedesk-adso-backend","timestamp":"2026-09-20T22:11:39.911Z"}

@@ -1,0 +1,14 @@
+
+
+### 16b. Reactivar usuario CONSULTA
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 60
+ETag: W/"3c-ogAZlgoM7/s/4MO+Z1UKAH+8/2s"
+Date: Sun, 20 Sep 2026 22:13:04 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"id":3,"email":"consulta@securedesk.local","isActive":true}

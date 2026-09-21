@@ -1,0 +1,3 @@
+
+### 4. Login CONSULTA
+{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImVtYWlsIjoiY29uc3VsdGFAc2VjdXJlZGVzay5sb2NhbCIsInJvbGUiOiJDT05TVUxUQSIsImlhdCI6MTc4OTk0MjMxMCwiZXhwIjoxNzg5OTQ5NTEwfQ.Ry34eOmcbMn40JQuZB7QtV3oCABS4yJZukDhUHX-UJY","user":{"id":3,"email":"consulta@securedesk.local","role":"CONSULTA"}}

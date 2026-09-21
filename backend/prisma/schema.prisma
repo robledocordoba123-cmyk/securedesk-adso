@@ -1,0 +1,49 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum Role {
+  ADMIN
+  ANALISTA
+  CONSULTA
+}
+
+enum Severity {
+  BAJA
+  MEDIA
+  ALTA
+  CRITICA
+}
+
+enum IncidentStatus {
+  ABIERTO
+  EN_PROCESO
+  CERRADO
+}
+
+model User {
+  id        Int        @id @default(autoincrement())
+  email     String     @unique
+  password  String
+  role      Role
+  isActive  Boolean    @default(true)
+  createdAt DateTime   @default(now())
+  incidents Incident[]
+}
+
+model Incident {
+  id            Int            @id @default(autoincrement())
+  title         String
+  description   String
+  severity      Severity
+  status        IncidentStatus @default(ABIERTO)
+  reporterEmail String
+  reportedById  Int
+  reportedBy    User           @relation(fields: [reportedById], references: [id])
+  createdAt     DateTime       @default(now())
+}
