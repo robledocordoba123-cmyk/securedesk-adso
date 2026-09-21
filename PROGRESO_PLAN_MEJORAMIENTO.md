@@ -11,18 +11,21 @@ Este archivo se actualiza cada vez que avanzamos algo, para poder retomar el tra
 ## Los 4 entregables del plan y su estado
 
 ### 1. Documento técnico PDF único (30%)
-- Estado: **pendiente de ensamblar**
-- Ya existe el contenido repartido en:
-  - `Documents/Seguridad Informatica/SecureDesk-ADSO/Dossier_Evidencias_Practicas_Seguridad_Informatica_Clases_1_a_6.docx`
-  - `Documents/Seguridad Informatica/Informe_Verificacion_Preproduccion_SecureDesk_ADSO.docx` (clase 7)
-  - `Documents/Seguridad Informatica/Plan_Implantacion_Segura_SecureDesk_ADSO_Clase08.docx` (clase 8)
-  - Documentos de RitmoApp (clases 1, 2, 6 — conceptuales, según lo aclarado en el doc de clase 8)
-- Falta: consolidar todo en un solo PDF con portada, tabla de contenido, versión/fecha y las secciones que pide la guía.
+- Estado: **COMPLETO** ✅
+- Archivo: `SecureDesk-ADSO/Documento_Tecnico_Plan_Mejoramiento_SecureDesk_ADSO.docx` y su versión `.pdf` (16 páginas), generados el 21 sept.
+- Incluye las 24 secciones que pide el plan (portada, TOC, descripción, alcance, arquitectura, activos, amenazas, vulnerabilidades, matriz de riesgos, CIA, autenticación, RBAC, JWT/Bcrypt, gestión de secretos, controles preventivos/detectivos/correctivos, usuarios, backups, restauración, continuidad, RTO/RPO, reversa, pruebas de seguridad, checklist preproducción, hallazgos, correcciones, conclusiones, referencias), con evidencia real (capturas de `evidencia/`, salidas de terminal reales, tablas reutilizadas de los docs de clase 7 y 8) y sin contenido inventado.
+- Pendiente menor: cuando el video esté grabado y la sustentación agendada, actualizar los dos placeholders "[PENDIENTE]" en la portada y en la sección de Referencias con los enlaces/fecha reales.
+- Nota técnica: el primer intento de generación produjo un .docx corrupto por un bug de código (arrays sin `spread` al insertar párrafos) — se detectó porque Word se negaba a abrirlo, se depuró por bisección y se corrigió. El archivo final se verificó abriéndolo con Word y revisando visualmente el PDF resultante.
 
 ### 2. Repositorio GitHub (15%)
-- Estado: **en progreso**
-- No existía `.git` en el proyecto al 20 sept.
-- Falta: git init, .gitignore, README con instrucciones reales, confirmar que `.env` no se suba (solo `.env.example`), rama/etiqueta `plan-mejoramiento`, subir a GitHub (necesita cuenta/autenticación de Manuela — `gh` CLI no está instalado/autenticado en esta máquina).
+- Estado: **COMPLETO** ✅
+- URL: https://github.com/robledocordoba123-cmyk/securedesk-adso (público)
+- Hecho el 21 sept:
+  - `git init`, `.gitignore` (excluye `node_modules/`, `*.log`, `backend/.env`, `backend/backups/*.sql`, `~$*.docx`, y `evidencia/admin_token.txt`/`consulta_token.txt` por buena práctica — no publicar JWT crudos aunque hayan expirado)
+  - `README.md` real y específico (arquitectura, roles, endpoints, instalación, usuarios de prueba, backup/restore)
+  - Commit inicial (59 archivos) en rama `master`, subido a GitHub
+  - Rama `plan-mejoramiento` creada y subida (la pide el plan explícitamente)
+- Pendiente menor: cuando el documento PDF y el video estén listos, actualizar el README con sus enlaces (hay placeholders "(pendiente)" ahí mismo).
 
 ### 3. Video YouTube 15-20 min (30%)
 - Estado: **no iniciado**

@@ -88,8 +88,8 @@ En la carpeta `evidencia/` se documentan pruebas reales ejecutadas contra el sis
 
 El análisis de riesgos, la matriz de riesgos, el plan de implantación segura y el informe de verificación preproducción de este sistema están consolidados en el documento técnico entregado junto con este repositorio para la competencia Seguridad Informática.
 
+- Documento técnico consolidado (PDF): [`Documento_Tecnico_Plan_Mejoramiento_SecureDesk_ADSO.pdf`](./Documento_Tecnico_Plan_Mejoramiento_SecureDesk_ADSO.pdf)
 - Video técnico: _(enlace pendiente)_
-- Documento técnico consolidado (PDF): _(pendiente de anexar)_
 
 ## Seguridad: manejo de secretos
 
