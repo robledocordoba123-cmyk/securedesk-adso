@@ -2,7 +2,7 @@
 
 API para gestión de incidentes de seguridad, desarrollada como proyecto práctico de la competencia **Seguridad Informática** (RA 01 — Planear actividades de implantación del software), ficha 3229209, Tecnología en Análisis y Desarrollo de Software (ADSO) — SENA.
 
-Aprendiz: Manuela Córdoba Robledo (1015071897)
+Aprendiz: Manuela Córdoba Robledo
 
 > Este repositorio corresponde al plan de mejoramiento de la competencia Seguridad Informática. Ver rama/etiqueta `plan-mejoramiento`.
 

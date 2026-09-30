@@ -1,6 +1,6 @@
 # Progreso — Plan de Mejoramiento Seguridad Informática (Ficha 3229209)
 
-Aprendiz: Manuela Córdoba Robledo (1015071897)
+Aprendiz: Manuela Córdoba Robledo
 Competencia: Seguridad Informática — Nota actual 69.2/100, mínimo 70
 Este archivo se actualiza cada vez que avanzamos algo, para poder retomar el trabajo aunque se cierre la sesión.
 
